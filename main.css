@@ -1,0 +1,31 @@
+.navigation ul {
+  list-style-type: none;
+  background-color: rgb(61, 94, 68);
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+
+.navigation a:hover {
+  background-color: gray;
+}
+
+.navigation li {
+  float: left;
+  padding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
