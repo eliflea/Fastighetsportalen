@@ -1,15 +1,35 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #3d5e44;
+  
+  
+  
+}
+
+.logo img {
+  max-width: 140px;
+  object-fit: contain; /* Skalar loggan så att den inte går utanför */
+  
+}
+
+
+
+
 .navigation ul {
   list-style-type: none;
-  background-color: rgb(61, 94, 68);
   padding: 0px;
   margin: 0px;
   overflow: hidden;
+  display: flex;
 }
 
 .navigation a {
   color: white;
   text-decoration: none;
-  padding: 15px;
+  padding: 10px 15px;
   display: block;
   text-align: center;
   font-size: 18px;
@@ -29,3 +49,4 @@
   padding: 0;
   box-sizing: border-box;
 }
+
