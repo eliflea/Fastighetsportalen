@@ -15,7 +15,7 @@ header {
   margin-top: 20px;
   position: absolute;
   z-index: 1;
-  font-weight: 400;
+  font-weight: 430;
   left: 50%;
   top: 40%;
   transform: translateX(-50%);
@@ -68,7 +68,7 @@ header {
   display: block;
   margin: 0 auto;
   padding: 0;
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   object-fit: cover;
   box-sizing: border-box;
