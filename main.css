@@ -68,4 +68,81 @@ header {
   box-sizing: border-box;
 }
 
+.icons-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 
+}
+.icon {
+  text-align: center;
+  margin: 10px;
+}
+
+.icon i {
+  font-size: 70px;
+  color: black;
+  margin-bottom: 10px;
+}
+.icon p {
+  font-size: 14px;
+  color: #3d5e44;
+}
+footer {
+  background-color: #3d5e44;
+  color: white;
+  padding: 20px 0;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Distributes space between the logo and the info sections */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  margin-left: 15px;
+}
+
+.footer-logo img {
+  max-width: 150px; /* Reduced the logo size slightly for better balance */
+}
+
+.footer-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-around; /* Reduced space between sections */
+}
+
+.footer-address,
+.footer-contact,
+.footer-social {
+  margin: 5px; /* Reduced margin to bring sections closer */
+  font-size: 14px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-address p strong,
+.footer-contact p strong,
+.footer-social p strong {
+  display: inline-block;
+  border-bottom: 1px solid rgb(98, 162, 111);
+  padding-bottom: 5px;
+}
+
+.footer-social i {
+  font-size: 18px;
+  margin-right: 5px; /* Reduced margin between icons */
+}
+
+.footer-social p {
+  margin-bottom: 5px; /* Reduced spacing between text and icons */
+}
