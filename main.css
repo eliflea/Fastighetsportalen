@@ -2,16 +2,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 0;
   background-color: #3d5e44;
+  margin-bottom: 0;
 }
 
 .rubrik {
-  margin-left: 30px;
-  font-family: Roboto, Arial;
-  color: #223426;
-  font-size: 35px;
+  text-align: center;
+  font-family: 'Roboto', Arial;
+  color: white;
+  font-size: 80px;
   margin-top: 20px;
+  position: absolute;
+  z-index: 1;
+  font-weight: 400;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
 }
 
 .logo img {
@@ -28,8 +35,8 @@ header {
 
 .navigation ul {
   list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   display: flex;
 }
@@ -40,13 +47,16 @@ header {
   padding: 10px;
   display: block;
   font-size: 18px;
-  font-family: "Roboto", Arial;
+  font-family: 'Roboto', Arial;
   margin-right: 30px;
+  font-weight: 100;
 }
 
 .navigation a:hover {
   background-color: #3d5e44;
   text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 0.5px; 
 }
 
 .navigation li {
@@ -54,11 +64,19 @@ header {
   padding: 10px;
 }
 
-.startsidaHus img {
+.hus img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+  height: 90vh;
+  width: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  filter: brightness(50%);
+}
+
+.hus {
+  position: relative;
 }
 
 * {
@@ -66,5 +84,3 @@ header {
   padding: 0;
   box-sizing: border-box;
 }
-
-
