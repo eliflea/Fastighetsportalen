@@ -5,40 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="headerFooter.css">
+  <script src="elisacar.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--font Awesome, ett populärt ikonbibliotek -->
 
   <title>Fastighetsportalen</title>
 </head>
 
 <body>
 
-  <header>
+  <!-- <header>
     <div class="logo">
       <img src="logo.jpg" alt="Logga">
-    </div>
+    </div> -->
 
-    <nav class="navigation">
-      <ul>
-        <li><a href="">Mina sidor</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="sok-ledigt.html">Sök ledigt</a></li>
-        <li><a href="">Om oss</a></li>
-      </ul>
-    </nav>
+    <nav class="navigation"></nav>
 
-    <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-   </nav>
+    <!-- <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+     </nav> -->
 
-   <div class="off-screen-navigation">
+  
+   <!-- <div class="off-screen-navigation">
     <ul>
       <li><a href="">Hem</a></li>
         <li><a href="">Kontakt</a></li>
@@ -47,7 +44,7 @@
         <li><a href="">Om oss</a></li>
     </ul>
    </div>
-  </header>
+  </header> -->
 
   <div class="hus">
     <img src="bilder/photo-1558969763-1e911dcd91e6.avif" alt="startsidaHus">
@@ -59,7 +56,31 @@
       </div>    
   </div>
 
-  <br>
+  <br> 
+  
+  <div class="icons-section">
+    <div class="icon">
+      <i class="fa-solid fa-house" style="color: #7e7e82;"></i>
+      <p>Hus</p> 
+    </div>
+  <div class="icon">
+    <i class="fa-solid fa-building" style="color: #7e7e82;"></i>
+    <p>Lägenhet</p>
+  </div>
+  <div class="icon">
+    <i class="fa-solid fa-warehouse" style="color: #7e7e82;"></i>
+    <p>Garage</p>
+  </div>
+  <div class="icon">
+    <i class="fa-solid fa-parking" style="color: #7e7e82;"></i>
+    <p>Parkering</p>
+  </div>
+  <div class="icon">
+    <i class="fa-solid fa-user-graduate" style="color:  #7e7e82;"></i>
+    <p>Studentbostäder</p>
+  </div>
+  </div>
+
   <div class="presentation">
     <h1 class="presentation-rubrik">Välkommen till Fastighetsportalen</h1>
     <p>
@@ -85,6 +106,8 @@
 </div>
 
   <script src="main.js"></script>
+
+  <footer></footer>
 </body>
 
 </html>

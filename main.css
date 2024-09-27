@@ -15,7 +15,6 @@ header {
   justify-content: flex-start;
 }
 
-
 .bild-text {
   position: absolute;
   top: 50%;
@@ -33,6 +32,10 @@ header {
 .rubrik {
   font-size: 80px;
   font-weight: 400;
+  margin-left: 30px;
+  font-family: Roboto, Arial;
+  color: #223426;
+  margin-top: 20px;
 }
 
 .beskrivning {
@@ -51,7 +54,7 @@ header {
   margin-top: 5px;
   cursor: pointer;
 }
-
+/* 
 .logo img {
   width: 5.3vw;
   max-width: 120px;
@@ -63,16 +66,16 @@ header {
 
 .logo img:hover {
   transform: scale(1.1);
-}
+} */
 
-.navigation ul {
+/* .navigation ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   margin-left: 600px;
-}
+} */
 
-.navigation a {
+/* .navigation a {
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -91,9 +94,9 @@ header {
 
 .navigation li {
   padding: 10px;
-}
+} */
 
-.off-screen-navigation {
+/* .off-screen-navigation {
   background: white;
   height: 100vh;
   width: 100%;
@@ -118,9 +121,9 @@ header {
 
 .off-screen-navigation.active {
   right: 0;
-}
+} */
 
-.hamburger {
+/* .hamburger {
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -138,7 +141,7 @@ header {
   background-color: white;
   margin: 2.5px 0;
   transition: 0.4s;
-}
+} */
 
 .undersida-bar a {
   color: rgb(57, 57, 57);
@@ -228,7 +231,7 @@ header {
   .bild-button {
     font-size: 20px;
   }
-
+/* 
   header {
     flex-direction: column; 
     align-items: center;
@@ -249,12 +252,12 @@ header {
 
   .logo img {
     width: 10vw; /* Increase flexibility on smaller screens */
-    max-width: 100px; /* Limit the size for smaller screens */
-  }
+    /* max-width: 100px; Limit the size for smaller screens */
+  /*} */
 }
 
 /* För mobilskärm storlek */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   header {
     padding: 10px 15px; 
   }
@@ -266,6 +269,30 @@ header {
 
   .logo img {
     width: 20vw; /* Larger width for very small screens */
-    max-width: 80px; /* Adjust the max width */
+    /* max-width: 80px; Adjust the max width
   }
+}  */
+
+/* Main.html icon design */
+
+.icons-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.icon {
+  text-align: center;
+  margin: 10px;
+}
+
+.icon i {
+  font-size: 70px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.icon p {
+  font-size: 14px;
+  color: #3d5e44;
 }
