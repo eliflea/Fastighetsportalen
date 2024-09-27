@@ -9,40 +9,54 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0;
   background-color: #3d5e44;
   margin-bottom: 0;
+  justify-content: flex-start;
+}
+
+
+.bild-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .rubrik {
-  text-align: center;
-  color: white;
   font-size: 80px;
-  position: absolute;
-  z-index: 2;
   font-weight: 400;
-  left: 50%;
-  top: 40%;
-  transform: translateX(-50%);
 }
 
 .beskrivning {
-  text-align: center;
-  color: white;
   font-size: 30px;
-  position: absolute;
-  z-index: 2;
   font-weight: 300;
-  left: 50%;
-  top: 54%;
-  transform: translateX(-50%);
+  margin-top: 5px;
+}
+
+
+.bild-button {
+  color: white;
+  font-size: 25px;
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: 300;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
 .logo img {
-  max-width: 80px;
+  width: 5.3vw;
+  max-width: 120px;
   object-fit: contain; 
-  margin-left: 30px;
+  margin-left: 30¤;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -54,6 +68,8 @@ header {
 .navigation ul {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
+  margin-left: 600px;
 }
 
 .navigation a {
@@ -63,7 +79,6 @@ header {
   display: block;
   font-size: 16px;
   font-family: 'Roboto', Arial;
-  margin-right: 30px;
   font-weight: 300;
 }
 
@@ -76,6 +91,53 @@ header {
 
 .navigation li {
   padding: 10px;
+}
+
+.off-screen-navigation {
+  background: white;
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  right: -450px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: .3s ease;
+  z-index: 2;
+}
+
+.off-screen-navigation ul {
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 10%;
+  list-style: none;
+}
+
+.off-screen-navigation.active {
+  right: 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.2);
+}
+
+.hamburger span {
+  width: 20px;;
+  height: 2px;
+  background-color: white;
+  margin: 2.5px 0;
+  transition: 0.4s;
 }
 
 .undersida-bar a {
@@ -110,16 +172,19 @@ header {
 
 .hus img {
   display: block;
-  height: 75vh;
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  box-sizing: border-box;
   filter: brightness(45%);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hus {
   position: relative;
   overflow: hidden;
+  height: 100vh;
 }
 
 .overlay {
@@ -148,4 +213,59 @@ header {
   top: 0; 
   left: 0; 
   z-index: 1;
+}
+
+/* För mindre skärm */
+@media (max-width: 768px) {
+  .rubrik {
+    font-size: 50px;
+  }
+
+  .beskrivning {
+    font-size: 20px;
+  }
+
+  .bild-button {
+    font-size: 20px;
+  }
+
+  header {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .logo img {
+    margin-bottom: 10px; 
+  }
+
+  .navigation {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+    width: 10vw;
+  }
+
+  .logo img {
+    width: 10vw; /* Increase flexibility on smaller screens */
+    max-width: 100px; /* Limit the size for smaller screens */
+  }
+}
+
+/* För mobilskärm storlek */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 15px; 
+  }
+
+  .navigation a {
+    font-size: 12px; 
+    padding: 5px 0; 
+  }
+
+  .logo img {
+    width: 20vw; /* Larger width for very small screens */
+    max-width: 80px; /* Adjust the max width */
+  }
 }
