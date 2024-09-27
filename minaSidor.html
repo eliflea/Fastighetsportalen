@@ -17,11 +17,108 @@
 </head>
 
 <body>
-    <nav class="navigation"></nav> 
- <h1> Mina Sidor </h1>
+  <nav class="navigation"></nav>
 
- <footer></footer>
+  <!-- <h1></h1> -->
+  <div class="background-wrapper">
+   <div class="loggaIn">  
+      
+    
+      <div class="LoggaInBox">  
+        <h2>Logga in</h2>
+        <form id="loggaInForm" action="#">
+          <div class="input-box">
+            <div class="loggaInIkon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <input type="email" id="loggaInEmail" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <div class="loggaInIkon">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <input type="password" id="loggaInLösenord" required>
+            <label>lösenord</label>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox">Kom ihåg mig</label>
+            <a href="#">Glömt lösenord?</a>
+          </div>
+
+          <div id="formErrorMessage"></div>
+
+          <button type="submit" class="btn">Logga in</button>
+
+          <div class="registrera">
+            <p>Har du inget konto? <a href="#" class="registrera-link">Registrera dig</a></p>
+          </div>
+        </form>
+      </div>
+
+      <div class="registreraBox">
+        <h2>Registrering</h2>
+        <form id="registreraForm" action="#">
+          <div class="input-box">
+            <div class="loggaInIkon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="text" id="registreraAnvändarnamn" required>
+            <label>Användarnamn</label>
+          </div>
+
+          <div class="input-box">
+            <div class="loggaInIkon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <input type="email" id="registreraEmail" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <div class="loggaInIkon">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <input type="password" id="registreraLösenord" required>
+            <label>lösenord</label>
+          </div>
+          <div class="remember">
+
+            <label><input type="checkbox" class="required">Jag accepterar villkoren</label>
+          </div>
+
+          <div id="form-error-message"></div>
+
+          <button type="submit" class="btn">Registrera</button>
+          <div class="registrera">
+            <p>Har du redan ett konto? <a href="#" class="loggaIn-link">Logga in</a></p>
+          </div>
+        </form>
+
+      </div>
+      
+      <!-- <div class="forgot-password-box">
+        <h2>Återställ lösenord</h2>
+        <form action="#">
+          <div class="input-box">
+            <div class="loggaInIkon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <input type="email" required>
+            <label>Ange din e-postadress</label>
+          </div>
+          <button type="submit" class="btn">Skicka återställningslänk</button>
+          <div class="back-to-login">
+            <p>Kom ihåg lösenordet? <a href="#" class="loggaIn-link">Logga in</a></p>
+          </div>
+        </form>
+      </div> -->
+     </div>
+    </div> 
+
+
+  <footer></footer>
 </body>
+
 </html>
-
-
