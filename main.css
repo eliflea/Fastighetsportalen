@@ -12,7 +12,7 @@ header {
   padding: 0;
   background-color: #3d5e44;
   margin-bottom: 0;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 
@@ -31,32 +31,50 @@ header {
 }
 
 .rubrik {
-  font-size: 80px;
+  font-size: max(6vw, 40px);
   font-weight: 400;
 }
 
 .beskrivning {
-  font-size: 30px;
+  font-size: max(2vw, 20px);
   font-weight: 300;
-  margin-top: 5px;
+  margin-top: .1em;
 }
-
 
 .bild-button {
   color: white;
-  font-size: 25px;
+  font-size: 1.4vw;
   background-color: transparent;
-  border-color: transparent;
-  font-weight: 300;
-  margin-top: 5px;
+  font-weight: 400;
+  margin-top: 3vw;
   cursor: pointer;
+  border-style: solid;
+  border-color: white;
+  border-radius: 25px;
+  padding: 0.6em;
+  width: 100%;
+  min-width: 100px;               
+  max-width: 240px;    
+  white-space: nowrap;
+}
+
+.bild-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
+  text-decoration-thickness: 0.1vw; 
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2vw;
 }
 
 .logo img {
   width: 5.3vw;
   max-width: 120px;
   object-fit: contain; 
-  margin-left: 30¤;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -65,11 +83,18 @@ header {
   transform: scale(1.1);
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
 .navigation ul {
   list-style-type: none;
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 600px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 
 .navigation a {
@@ -91,6 +116,7 @@ header {
 
 .navigation li {
   padding: 10px;
+  white-space: nowrap;
 }
 
 .off-screen-navigation {
@@ -124,8 +150,11 @@ header {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  margin-left: 10px;
+  margin-right: 3vw;
+  margin-left: 3vw;
   transition: transform 0.3s ease;
+  z-index: 3;
+  position: relative;
 }
 
 .hamburger:hover {
@@ -133,11 +162,29 @@ header {
 }
 
 .hamburger span {
-  width: 20px;;
+  width: 20px;
   height: 2px;
   background-color: white;
   margin: 2.5px 0;
-  transition: 0.4s;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background-color: rgb(54, 54, 54);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  background-color: rgb(54, 54, 54);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .undersida-bar a {
@@ -218,7 +265,7 @@ header {
 /* För mindre skärm */
 @media (max-width: 768px) {
   .rubrik {
-    font-size: 50px;
+    /* font-size: 40px; */
   }
 
   .beskrivning {
@@ -230,18 +277,18 @@ header {
   }
 
   header {
-    flex-direction: column; 
-    align-items: center;
+    flex-direction: row; 
+    margin-right: auto;
   }
 
   .logo img {
     margin-bottom: 10px; 
   }
 
-  .navigation {
+  .navigation li {
     display: none;
   }
-  
+
   .hamburger {
     display: flex;
     width: 10vw;
@@ -259,9 +306,8 @@ header {
     padding: 10px 15px; 
   }
 
-  .navigation a {
-    font-size: 12px; 
-    padding: 5px 0; 
+  .navigation {
+    display: none;
   }
 
   .logo img {
