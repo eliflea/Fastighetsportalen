@@ -1,17 +1,30 @@
 // Hamburgarmeny på
-const hamMenu = document.querySelector('.hamburger');
+document.addEventListener('DOMContentLoaded', () => {
+  const hamMenu = document.querySelector('.hamburger');
+  const offScreenNav = document.querySelector('.off-screen-navigation');
+  const overlay = document.querySelector('.mork-overlay');
 
-const offScreenNav = document.querySelector('.off-screen-navigation');
+  hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+    offScreenNav.classList.toggle('active');
 
-hamMenu.addEventListener('click', () => {
-  hamMenu.classList.toggle('active');
-  offScreenNav.classList.toggle('active');
+    // ej scrollande när navigation är aktiv + mörk overlay
+    if (offScreenNav.classList.contains('active')) {
+      document.documentElement.classList.add('no-scroll');
+      overlay.classList.add('active'); // visa overlay
+    } else {
+      document.documentElement.classList.remove('no-scroll');
+      overlay.classList.remove('active'); // göm overlay
+    }
+  });
 
-  // if (offScreenNav.classList.contains('active')) {
-  //   hamMenu.classList.add('fixed');
-  // } else {
-  //   hamMenu.classList.remove('fixed');
-  // }
+  // om man klickar på resten av sida stängs off-navigation-bar
+  overlay.addEventListener('click', () => {
+    hamMenu.classList.remove('active');
+    offScreenNav.classList.remove('active');
+    overlay.classList.remove('active'); 
+    document.documentElement.classList.remove('no-scroll'); 
+  });
 });
 
 //kontakt från startsidan
@@ -20,9 +33,9 @@ const contactBox = document.getElementById('kontakt');
 const closeContact = document.getElementById('kontakt-stang');
 
 contactLogo.addEventListener('click', () => {
-  contactBox.style.display = contactBox.style.display === 'block' ? 'none' : 'block'; // Toggle display
+  contactBox.classList.toggle('active');
 });
 
 closeContact.addEventListener('click', () => {
-  contactBox.style.display = 'none'; // Hide the contact box
+  contactBox.classList.remove('active');
 });
