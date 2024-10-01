@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontaktsida</title>
-  <link rel="stylesheet" href="kontakt.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktsida</title>
+    <link rel="stylesheet" href="kontakt.css">
 </head>
+
 <body>
-  <!-- Startsida bild -->
-  <div class="hus">
-    <img src="Husbilder/IMG_6033 .jpg" alt="startsidaHus">
-    <div class="overlay"></div>
-    <div class="bild-text">
-      <h1 class="rubrik">Fastighetsportalen</h1>
-      <h2 class="beskrivning">Perfekta bostäder - bara för dig</h2>
-      <button class="bild-button">Bo hos oss</button>
+    <!-- Startsida bild -->
+    <div class="hus">
+        <img src="Husbilder/IMG_6033 .jpg" alt="startsidaHus">
+        <div class="overlay"></div>
+        <div class="bild-text">
+            <h1 class="rubrik">Fastighetsportalen</h1>
+            <h2 class="beskrivning">Perfekta bostäder - bara för dig</h2>
+            <button class="bild-button">Bo hos oss</button>
+        </div>
     </div>
-  </div>
 
-  <div class="container">
-    <h1>Kontakta oss</h1>
-    <form id="contactForm">
-      <label for="name">Namn:</label>
-      <input type="text" id="name" name="name" placeholder="Ditt namn" required>
-      <small id="nameError" class="error-message"></small>
+    <div class="container">
+    
+        <h1>Kontakta oss</h1>
+    
+        <!-- kontaktformulär -->
+        <form id="contactForm">
+            <label for="name">Namn:</label>
+            <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+            <small id="nameError" class="error-message"></small>
 
-      <label for="phone">Telefonnummer:</label>
-      <input type="tel" id="phone" name="phone" placeholder="Ditt telefonnummer" required>
-      <small id="phoneError" class="error-message"></small>
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ditt telefonnummer" required>
+            <small id="phoneError" class="error-message"></small>
 
-      <label for="email">E-postadress:</label>
-      <input type="email" id="email" name="email" placeholder="Din e-post" required>
-      <small id="emailError" class="error-message"></small>
+            <label for="email">E-postadress:</label>
+            <input type="email" id="email" name="email" placeholder="Din e-post" required>
+            <small id="emailError" class="error-message"></small>
 
-      <label for="message">Meddelande:</label>
-      <textarea id="message" name="message" placeholder="Ditt meddelande" required></textarea>
-      <small id="messageError" class="error-message"></small>
+            <label for="message">Meddelande:</label>
+            <textarea id="message" name="message" placeholder="Ditt meddelande" required></textarea>
+            <small id="messageError" class="error-message"></small>
 
-      <button type="submit">Skicka</button>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
+            <button type="submit">Skicka</button>
+        </form>
+    </div>
+    <script src="kontakt.js"></script>
 </body>
+
 </html>

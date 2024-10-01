@@ -1,101 +1,93 @@
-// Grabbing form elements
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 
-// Grabbing error messages
 const nameError = document.getElementById('nameError');
 const phoneError = document.getElementById('phoneError');
 const emailError = document.getElementById('emailError');
 const messageError = document.getElementById('messageError');
 
-// Name validation
+// Validera namn
 nameInput.addEventListener('input', () => {
-  const nameValue = nameInput.value.trim();
-  if (nameValue.length < 3) {
-    nameError.textContent = 'Namn måste vara minst 3 tecken.';
-    nameError.style.display = 'block';
-  } else {
-    nameError.style.display = 'none';
-  }
+    const nameValue = nameInput.value.trim();
+    nameError.style.display = nameValue.length < 3 ? 'block' : 'none';
+    nameError.textContent = nameValue.length < 3 ? 'Namn måste vara minst 3 tecken.' : '';
 });
 
-// Phone validation
+// Validera telefonnummer
 phoneInput.addEventListener('input', () => {
-  const phoneValue = phoneInput.value.trim();
-  const phonePattern = /^07\d{8}$/; // Matches numbers starting with 07 and followed by exactly 8 digits
-  if (!phonePattern.test(phoneValue)) {
-    phoneError.textContent = 'Telefonnumret måste börja med "07" och vara 10 siffror långt.';
-    phoneError.style.display = 'block';
-  } else {
-    phoneError.style.display = 'none';
-  }
+    const sanitizedValue = phoneInput.value.replace(/[^0-9]/g, ''); // Ta bort icke siffror
+    phoneInput.value = sanitizedValue;
+
+    const phoneValue = phoneInput.value.trim();
+    const phonePattern = /^07\d{8}$/; // Måste börja med 07 sedan 8 siffror
+
+    if (!phonePattern.test(phoneValue)) { // FelmeddelFnden
+        phoneError.style.display = 'block';
+        phoneError.textContent = phoneValue.length < 10
+            ? 'Telefonnumret måste vara 10 siffror långt.'
+            : 'Telefonnumret måste börja med "07".';
+    } else {
+        phoneError.style.display = 'none';
+    }
 });
 
-// Email validation
+// Validera e-postadress
 emailInput.addEventListener('input', () => {
-  const emailValue = emailInput.value.trim();
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(emailValue)) {
-    emailError.textContent = 'Ogiltig e-postadress.';
-    emailError.style.display = 'block';
-  } else {
-    emailError.style.display = 'none';
-  }
+    const emailValue = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Måste ha @
+    emailError.style.display = emailPattern.test(emailValue) ? 'none' : 'block';
+    emailError.textContent = emailPattern.test(emailValue) ? '' : 'Ogiltig e-postadress.';
 });
 
-// Message validation
+// Validera meddelande
 messageInput.addEventListener('input', () => {
-  const messageValue = messageInput.value.trim();
-  if (messageValue.length < 10) {
-    messageError.textContent = 'Meddelandet måste vara minst 10 tecken.';
-    messageError.style.display = 'block';
-  } else {
-    messageError.style.display = 'none';
-  }
+    const messageValue = messageInput.value.trim();
+    messageError.style.display = messageValue.length < 10 ? 'block' : 'none';
+    messageError.textContent = messageValue.length < 10 ? 'Meddelandet måste vara minst 10 tecken.' : '';
 });
 
-// Prevent form submission if invalid
+// Skickas ej om fält ogiltiga
 form.addEventListener('submit', (event) => {
-  // Re-check all fields before submission
-  const nameValue = nameInput.value.trim();
-  const phoneValue = phoneInput.value.trim();
-  const emailValue = emailInput.value.trim();
-  const messageValue = messageInput.value.trim();
-  const phonePattern = /^07\d{8}$/; // Matches numbers starting with 07 and followed by exactly 8 digits
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const nameValue = nameInput.value.trim();
+    const phoneValue = phoneInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const messageValue = messageInput.value.trim();
 
-  // Check if all fields are valid
-  let isFormValid = true;
+    const phonePattern = /^07\d{8}$/; // Måste börja med 07 sedan 8 siffror
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Måste ha @
 
-  if (nameValue.length < 3) {
-    nameError.textContent = 'Namn måste vara minst 3 tecken.';
-    nameError.style.display = 'block';
-    isFormValid = false;
-  }
+    let isFormValid = true;
 
-  if (!phonePattern.test(phoneValue)) {
-    phoneError.textContent = 'Telefonnumret måste börja med "07" och vara 10 siffror långt.';
-    phoneError.style.display = 'block';
-    isFormValid = false;
-  }
+    if (nameValue.length < 3) {
+        nameError.style.display = 'block';
+        nameError.textContent = 'Namn måste vara minst 3 tecken.';
+        isFormValid = false;
+    }
 
-  if (!emailPattern.test(emailValue)) {
-    emailError.textContent = 'Ogiltig e-postadress.';
-    emailError.style.display = 'block';
-    isFormValid = false;
-  }
+    const sanitizedPhoneValue = phoneValue.replace(/[^0-9]/g, ''); // Ta bort icke siffror
+    if (!phonePattern.test(sanitizedPhoneValue)) {
+        phoneError.style.display = 'block';
+        phoneError.textContent = 'Telefonnumret måste börja med "07" och vara 10 siffror långt.';
+        isFormValid = false;
+    }
 
-  if (messageValue.length < 10) {
-    messageError.textContent = 'Meddelandet måste vara minst 10 tecken.';
-    messageError.style.display = 'block';
-    isFormValid = false;
-  }
+    if (!emailPattern.test(emailValue)) {
+        emailError.style.display = 'block';
+        emailError.textContent = 'Ogiltig e-postadress.';
+        isFormValid = false;
+    }
 
-  // Prevent form submission if there are errors
-  if (!isFormValid) {
-    event.preventDefault();
-  }
+    if (messageValue.length < 10) {
+        messageError.style.display = 'block';
+        messageError.textContent = 'Meddelandet måste vara minst 10 tecken.';
+        isFormValid = false;
+    }
+
+    // Skickas ej om fel finns
+    if (!isFormValid) {
+        event.preventDefault();
+    }
 });
